@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Banner */
+.banner-bg-img {
+    background-image: url(../public/Home/banner-bg.png);
+}
+
+/* Connect Wallet page css */
+.left-card-img {
+    background-image: url(../public/Monkey.png);
+}
+
+.card-inner-bg-css {
+    background: rgba(37, 20, 68, 0.67);
+    backdrop-filter: blur(2px);
+}
+
+.card-inner-bg-css2 {
+    background: rgba(108, 60, 228, 0.324);
+}
+
+.right-card-top-bg {
+    background: rgba(107, 60, 228, 0.10);
+}
+
+.warningTextBg {
+    background: rgba(255, 69, 80, 0.05);
+}
