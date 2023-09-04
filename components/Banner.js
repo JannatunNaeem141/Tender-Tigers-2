@@ -8,8 +8,8 @@ import { MdOutlineRadioButtonUnchecked } from 'react-icons/md';
 export default function Banner() {
     return (
         <div className='banner-bg-img bg-center bg-no-repeat bg-cover'>
-            <div className='max-w-7xl lg:mx-auto md:mx-8 mx-5 lg:px-8 py-16'>
-                <div className='md:flex grid grid-cols-1 items-center justify-center gap-12 py-24 lg:min-h-screen md:min-h-[80vh] min-h-screen'>
+            <div className='max-w-7xl lg:mx-auto md:mx-8 mx-5 lg:px-8'>
+                <div className='md:flex grid grid-cols-1 items-center justify-center gap-12  lg:min-h-screen md:min-h-[80vh] min-h-screen md:py-32 py-28'>
                     <div className='md:w-[420px] w-full'>
                         <div className='left-card-img bg-cover bg-no-repeat bg-center h-72 rounded-t-2xl'></div>
                         <div className='card-inner-bg-css p-8 flex flex-col gap-4 border border-[#601FEB]'>
