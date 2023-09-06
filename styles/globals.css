@@ -7,6 +7,16 @@
     background-image: url(../public/Home/banner-bg.png);
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 /* Connect Wallet page css */
 .left-card-img {
     background-image: url(../public/Monkey.png);
@@ -27,4 +37,40 @@
 
 .warningTextBg {
     background: rgba(255, 69, 80, 0.05);
+}
+
+@media (max-width: 767px) {
+    .maxWidthofBanner {
+        padding: 0 110px;
+    }
+}
+
+@media (max-width: 695px) {
+    .maxWidthofBanner {
+        padding: 0 90px;
+    }
+}
+
+@media (max-width: 655px) {
+    .maxWidthofBanner {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 595px) {
+    .maxWidthofBanner {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 535px) {
+    .maxWidthofBanner {
+        padding: 0 0;
+    }
+}
+
+@media (max-width: 475px) {
+    .numInput {
+        width: 80%;
+    }
 }
