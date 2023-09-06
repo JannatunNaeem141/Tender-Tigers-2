@@ -5,6 +5,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import Logo from '../public/Logos/logo.png';
 import Image from 'next/image';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
+import WIcon from '../public/icons/w-icon.png';
 
 
 export default function Navbar() {
@@ -63,7 +64,7 @@ export default function Navbar() {
                             <ul className='flex items-center gap-4'>
                                 <Link href='#' className='p-2 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaDiscord className='text-white text-lg' /></Link>
                                 <Link href='#' className='p-2 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaTwitter className='text-white text-lg' /></Link>
-                                <Link href='#' className='text-white bg-[#5C1FDF] hover:bg-transparent duration-500 border border-[#5C1FDF] rounded-full py-2 px-8 font-medium'>Connect Wallet</Link>
+                                <Link href='#' className='text-white bg-[#5C1FDF] hover:bg-transparent duration-500 border border-[#5C1FDF] rounded-full py-2 px-8 font-medium flex items-center gap-2'><Image src={WIcon} alt='W-Icon' />Connect Wallet</Link>
                             </ul>
                         </div>
                     </div>
@@ -71,9 +72,9 @@ export default function Navbar() {
                 <div className='flex items-center lg:gap-5 gap-5'>
                     <div className="space-x-2 lg:inline-block hidden">
                         <ul className='flex items-center gap-4'>
-                            <Link href='#' className='p-2 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaDiscord className='text-white text-lg' /></Link>
-                            <Link href='#' className='p-2 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaTwitter className='text-white text-lg' /></Link>
-                            <Link href='#' className='text-white bg-[#5C1FDF] hover:bg-transparent duration-500 border border-[#5C1FDF] rounded-full py-2 px-8 font-medium'>Connect Wallet</Link>
+                            <Link href='#' className='p-3 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaDiscord className='text-white text-lg' /></Link>
+                            <Link href='#' className='p-3 border border-[#5C1FDF] bg-[#5C1FDF] hover:bg-transparent duration-500 rounded-full'><FaTwitter className='text-white text-lg' /></Link>
+                            <Link href='#' className='text-white bg-[#5C1FDF] hover:bg-transparent duration-500 border border-[#5C1FDF] rounded-full py-3 px-10 font-medium flex items-center gap-2'><Image src={WIcon} alt='W-Icon' /> Connect Wallet</Link>
                         </ul>
                     </div>
                 </div>

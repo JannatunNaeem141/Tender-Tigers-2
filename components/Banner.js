@@ -1,11 +1,28 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { PiWarning } from 'react-icons/pi';
 import { MdOutlineRadioButtonUnchecked } from 'react-icons/md';
 
 
 export default function Banner() {
+    const [mintQuantity, setMintQuantity] = useState(1);
+
+    const handleQuantityIncrease = () => {
+        if (mintQuantity < 5) {
+            setMintQuantity((prevValue) => prevValue + 1)
+        } else {
+            return
+        }
+    }
+
+    const handleQuantityDecrease = () => {
+        if (mintQuantity > 1) {
+            setMintQuantity((prevValue) => prevValue - 1)
+        } else {
+            return
+        }
+    }
     return (
         <div className='banner-bg-img bg-center bg-no-repeat bg-cover'>
             <div className='max-w-7xl lg:mx-auto md:mx-8 mx-5 lg:px-8'>
@@ -32,13 +49,28 @@ export default function Banner() {
                                     <p className='text-[#DBDFF0] text-base font-medium'>Cost</p>
                                     <AiOutlineMinus className='text-[#F6BE2C] text-lg' />
                                 </div>
-                                <p className='text-[#DBDFF0] text-base w-1/2 text-right'>0.75 MATIC</p>
+                                <p className='text-[#DBDFF0] text-base w-1/2 text-right'>{mintQuantity * 0.75} MATIC</p>
                             </div>
                         </div>
                         <div className='rounded-b-2xl flex items-center justify-between overflow-hidden card-inner-bg-css2 border-b border-b-[#601FEB]'>
-                            <button className='bg-[#5C1FDF] hover:bg-[#500de3] duration-500 px-8 py-3'><AiOutlineMinus className='text-[#DBDFF0]' /></button>
-                            <div className='text-white'>500</div>
-                            <button className='bg-[#5C1FDF] hover:bg-[#500de3] duration-500 px-8 py-3'><AiOutlinePlus className='text-[#DBDFF0]' /></button>
+                            <button onClick={handleQuantityDecrease} className={`bg-[#5C1FDF] hover:bg-[#3907a6] duration-500 px-8 py-3 ${mintQuantity <= 1 ? "opacity-40" : "opacity-100"}`}><AiOutlineMinus className='text-[#DBDFF0] text-xl' /></button>
+                            <input onKeyDown={(evt) => ["e", "E", "+", "-", "/"].includes(evt.key) && evt.preventDefault()}
+                                autoFocus
+                                onChange={(e) => {
+                                    if (parseInt(e.target.value) > 5) {
+                                        e.target.value = `${5}`;
+                                    } else if (parseInt(e.target.value) < 1) {
+                                        e.target.value = "1";
+                                    } else {
+                                        setMintQuantity(parseInt(e.target.value));
+                                    }
+                                }}
+                                type="number" name="" id=""
+                                defaultValue={mintQuantity}
+                                key={mintQuantity}
+                                className="bg-transparent outline-none text-center text-white text-lg"
+                            />
+                            <button onClick={handleQuantityIncrease} className={`bg-[#5C1FDF] hover:bg-[#3907a6] duration-500 px-8 py-3  ${mintQuantity === 5 ? "opacity-40" : "opacity-100"}`}><AiOutlinePlus className='text-[#DBDFF0] text-xl' /></button>
                         </div>
                     </div>
                     <div className='md:w-[420px] w-full'>
@@ -59,13 +91,14 @@ export default function Banner() {
                             <p className='text-[#939FD3] text-base'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati unde at odit laudantium.</p>
                             <h3 className='text-2xl uppercase font-semibold text-[#FDBE44]'>Public mint end in</h3>
                             <div className='flex'>
-                                <div className='text-base px-3 py-2 text-[#FF434E] border border-[#FF455042] flex items-center gap-3 warningTextBg'><PiWarning />This auction has ended</div>
+                                <div className='text-xl px-3 py-2 text-[#FF434E] border border-[#FF455042] flex items-center gap-3 warningTextBg'><PiWarning />This auction has ended</div>
                             </div>
                             <ul>
-                                <li className='text-[#DBDFF0] uppercase text-sm flex items-center gap-3'><MdOutlineRadioButtonUnchecked className="text-[#FECF1E]" />Max 5 nfts per wallet</li>
-                                <li className='text-[#DBDFF0] uppercase text-sm flex items-center gap-3'><MdOutlineRadioButtonUnchecked className="text-[#FECF1E]" />Price 0.75 Matic + Gas</li>
+                                <li className='text-[#DBDFF0] uppercase text-base flex items-center gap-3'><MdOutlineRadioButtonUnchecked className="text-[#FECF1E]" />Max 5 nfts per wallet</li>
+                                <li className='text-[#DBDFF0] uppercase text-base flex items-center gap-3'><MdOutlineRadioButtonUnchecked className="text-[#FECF1E]" />Price 0.75 Matic + Gas</li>
                             </ul>
-                            <button className='uppercase text-white font-semibold w-full rounded-full bg-[#5C1FDF] border border-[#5C1FDF] hover:bg-transparent duration-500 py-3'>Mint now</button>
+                            <button className='uppercase text-white font-semibold w-full rounded-full bg-[#5C1FDF] border border-[#5C1FDF] hover:border-[#3907a6] 
+                            hover:bg-[#3907a6] duration-500 py-3'>Mint now</button>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <Head>
-        <title>Tender Tigers</title>
+        <title>Tender Tigers Mint</title>
         <meta charSet="UTF-8" />
         <meta name='description' content='' />
         <meta name='keywords' content='' />
